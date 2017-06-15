@@ -4,16 +4,22 @@
   <head>
     <meta charset="utf-8">
     <title>Giphy Live Solve</title>
+    <!-- Angular -->
     <script type="text/javascript" src='vendors/angular.min.js'></script>
-    <script type="text/javascript" src='scripts/giphyInClass.js'>
-    </script>
+    <!-- Controller -->
+    <script type="text/javascript" src='scripts/giphyInClass.js'></script>
+    <!-- Service -->
+    <script type="text/javascript" src='scripts/services/giphyService.js'></script>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
 
   <body ng-app='myApp'>
     <h1>Giphy: Live Solve</h1>
-    <div ng-controller='GiphyController as gc'>
+    <div ng-controller='GiphyController as gc' ng-init='gc.randomGif()'>
+      <img ng-repeat='gif in gc.data' src='{{gif.images.downsized.url}}'>
+
+      </img>
 
     </div>
 
